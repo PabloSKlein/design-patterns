@@ -8,7 +8,6 @@ import br.unisinos.edu.dev2.covid.designpatterns.api.dto.PessoaDTO;
 import br.unisinos.edu.dev2.covid.designpatterns.api.entity.CasoCovid;
 import br.unisinos.edu.dev2.covid.designpatterns.api.entity.Infectado;
 import br.unisinos.edu.dev2.covid.designpatterns.api.entity.Localizacao;
-import br.unisinos.edu.dev2.covid.designpatterns.api.exception.HttpException;
 import br.unisinos.edu.dev2.covid.designpatterns.api.exception.factory.HttpExceptionFactory;
 import br.unisinos.edu.dev2.covid.designpatterns.api.repository.CasosCovidRepository;
 import br.unisinos.edu.dev2.covid.designpatterns.api.repository.InfectadoRepository;
@@ -16,12 +15,8 @@ import br.unisinos.edu.dev2.covid.designpatterns.api.repository.LocalizacaoRepos
 import br.unisinos.edu.dev2.covid.designpatterns.api.service.iface.CasosCovidService;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-
-import static br.unisinos.edu.dev2.covid.designpatterns.api.exception.factory.HttpExceptionFactory.buildRegistroNaoEncontrado;
 import static java.time.LocalDateTime.now;
 
 @Service

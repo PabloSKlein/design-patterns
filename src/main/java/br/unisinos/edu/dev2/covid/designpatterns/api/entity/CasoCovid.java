@@ -1,6 +1,5 @@
 package br.unisinos.edu.dev2.covid.designpatterns.api.entity;
 
-import lombok.Builder;
 import lombok.Data;
 
 import javax.persistence.*;

@@ -5,8 +5,10 @@ import br.unisinos.edu.dev2.covid.designpatterns.api.dto.CasoCovidDetalhadoDTO;
 import br.unisinos.edu.dev2.covid.designpatterns.api.service.iface.CasosCovidService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -20,6 +22,7 @@ import static org.springframework.http.ResponseEntity.ok;
 @RestController
 @RequestMapping("covid")
 @AllArgsConstructor
+@Validated
 @Api(value = "API manutenir casos de covid no país")
 public class CasosCovidController {
     private CasosCovidService casosCovidService;
@@ -33,7 +36,7 @@ public class CasosCovidController {
 
     @GetMapping("/casos/{numeroRegistro}")
     @ApiOperation(value = "Consulta caso por número de registro")
-    public ResponseEntity<CasoCovidDetalhadoDTO> consultarCaso(@PathVariable Long numeroRegistro) {
+    public ResponseEntity<CasoCovidDetalhadoDTO> consultarCaso(@ApiParam(required = true) @PathVariable Long numeroRegistro) {
         return ok(casosCovidService.consultarCaso(numeroRegistro));
     }
 }

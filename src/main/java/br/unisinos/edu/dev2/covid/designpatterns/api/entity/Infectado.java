@@ -17,11 +17,11 @@ public class Infectado {
     @NotNull
     private int idade;
     @Column
-    private boolean transmissaoLocal;
+    private Boolean transmissaoLocal;
     @Column
-    private boolean viajouRecentemente;
+    private Boolean viajouRecentemente;
     @Column
-    private boolean possuiDoencaAgravente;
+    private Boolean possuiDoencaAgravente;
     @OneToOne(mappedBy = "infectado")
     private CasoCovid casoCovid;
 }
